@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dleplugin>
+	<name>YouTubePopUp_tcse</name>
+	<description>Запуск ссылок на YouTube в модальном окне.</description>
+	<icon>engine/skins/images/youtubepopup_tcse.png</icon>
+	<version>1.0</version>
+	<dleversion>13</dleversion>
+	<versioncompare>greater</versioncompare>
+	<upgradeurl></upgradeurl>
+	<filedelete>0</filedelete>
+	<needplugin></needplugin>
+	<mnotice>1</mnotice>
+	<mysqlinstall><![CDATA[]]></mysqlinstall>
+	<mysqlupgrade><![CDATA[]]></mysqlupgrade>
+	<mysqlenable><![CDATA[]]></mysqlenable>
+	<mysqldisable><![CDATA[]]></mysqldisable>
+	<mysqldelete><![CDATA[]]></mysqldelete>
+	<phpinstall><![CDATA[]]></phpinstall>
+	<phpupgrade><![CDATA[]]></phpupgrade>
+	<phpenable><![CDATA[]]></phpenable>
+	<phpdisable><![CDATA[]]></phpdisable>
+	<phpdelete><![CDATA[]]></phpdelete>
+	<notice><![CDATA[Доработка плагина [url]https://github.com/tcse/YouTube_PopUp[/url]  для использования в шаблона DLE CMS. Например для RSS информеров в которых используются ссылки на youtube ролики.
+
+[h3]Установка[/h3]
+В файле [b]main.tpl[/b] найти место подключения jQuery, напоминаю, что он уже есть в любой версии DLE. 
+Обычно он загружается переменной {jsfiles}{AJAX} если скрипты вынесены в конец файла.
+
+Или перед закрывающим тегом
+
+[code]</body>[/code]
+
+Если используется классический способ подключения стилей и JS.
+
+После jQuery Вставить:
+
+[code]
+{* YouTube_PopUp *}
+<link rel="stylesheet" type="text/css" href="{THEME}/assets/youtubepopup/YouTubePopUp.css">
+<script type="text/javascript" src="{THEME}/assets/youtubepopup/YouTubePopUp.jquery.js"></script>
+<script type="text/javascript">
+  jQuery(function(){
+      jQuery("a.bla-1").YouTubePopUp();
+      jQuery("a.bla-2").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
+  });
+</script>
+[/code]
+
+
+Если же необходимо добавить запуск окна с плеером YouTube для всех ссылок на сайте, которые ведут на https://www.youtube.com/ тогда дополнительно добавьте перед закрывающим тегом
+
+[code]</body>[/code]
+
+$('a[href^="https://www.youtube.com/watch?"]').addClass("bla-2");
+
+и получиться что-то вроде
+
+[code]
+<script>
+	$('a[href^="https://www.youtube.com/watch?"]').addClass("bla-2");
+	$('a[href^="https://youtu.be/"]').addClass("bla-1");
+</script>
+[/code]
+
+Пользуйтесь.
+
+В комплекте идет шаблон для RSS информеров. Файл называется informer_youtube.tpl ]]></notice>
+</dleplugin>
