@@ -43,6 +43,7 @@
     <script>
         $('a[href^="https://www.youtube.com/watch?"]').addClass("bla-2");
         $('a[href^="https://youtu.be/"]').addClass("bla-1");
+        $(".full-content > a.bla-1 img").wrap('<div class="ytpu-container"/>');
     </script>
 
 Что бы на картинки роликов из полной новости в шаблоне [b]fullstory.tpl[/b] автоматически накладывались иконки плеера, необходимо тег {full-story} обернуть в класс
