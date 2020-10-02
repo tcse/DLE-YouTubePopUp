@@ -63,6 +63,12 @@ $('a[href^="https://www.youtube.com/watch?"]').addClass("bla-1");
 </script>
 [/code]
 
+Что бы на картинки роликов из полной новости в шаблоне [b]fullstory.tpl[/b] автоматически накладывались иконки плеера, необходимо тег {full-story} обернуть в класс
+
+[code]
+<div class="full-content">{full-story}</div>
+[/code]
+
 Пользуйтесь.
 
 В комплекте идет шаблон для RSS информеров. Файл называется informer_youtube.tpl ]]></notice>
