@@ -155,7 +155,41 @@ body.logged-in .YouTubePopUp-Wrap{ /* For WordPress */
     }
 }
 
+/* ============================================================== */
 /* Дополнения от TCSE */
+/* ============================================================== */
 .img-responsive {max-width: 100%;}
 .img-fluid {max-width: 100%;}
 .text-center {text-align: center;}
+
+/* вывод текстовой подсказки у ссылок запуска ютуб ролика */
+.full-content > a.bla-1::after { 
+    content: 'чтобы просмотреть ролик, кликните на картинку'; 
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* стилиация картинки ролика - рамка, тени и все такое */
+.full-content > a.bla-1 img { 
+    border-radius: 15px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.12),0 1px 6px rgba(0,0,0,.12);
+    width: 90vw;
+}
+/* ============================================================== */
+/* Накладываем иконку плеера на картинки с ютуба */
+/* ============================================================== */
+.ytpu-container {
+    position: relative;
+}
+.ytpu-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.8s;
+  opacity: 0.8;
+  background: url(videoplay.png) center no-repeat;;
+  background-size: auto;
+}

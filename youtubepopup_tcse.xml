@@ -3,7 +3,7 @@
 	<name>YouTubePopUp_tcse</name>
 	<description>Запуск ссылок на YouTube в модальном окне.</description>
 	<icon>engine/skins/images/youtubepopup_tcse.png</icon>
-	<version>1.0</version>
+	<version>1.1</version>
 	<dleversion>13</dleversion>
 	<versioncompare>greater</versioncompare>
 	<upgradeurl></upgradeurl>
@@ -51,14 +51,15 @@
 
 [code]</body>[/code]
 
-$('a[href^="https://www.youtube.com/watch?"]').addClass("bla-2");
+$('a[href^="https://www.youtube.com/watch?"]').addClass("bla-1");
 
 и получиться что-то вроде
 
 [code]
 <script>
-	$('a[href^="https://www.youtube.com/watch?"]').addClass("bla-2");
+	$('a[href^="https://www.youtube.com/watch?"]').addClass("bla-1");
 	$('a[href^="https://youtu.be/"]').addClass("bla-1");
+	$(".full-content > a.bla-1 img").wrap('<div class="ytpu-container"/>');
 </script>
 [/code]
 
