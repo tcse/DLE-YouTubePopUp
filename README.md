@@ -47,8 +47,8 @@
 
 Что бы на картинки роликов из полной новости в шаблоне [b]fullstory.tpl[/b] автоматически накладывались иконки плеера, необходимо тег {full-story} обернуть в класс
 
+    <div class="full-content">{full-story}</div>
   
-  <div class="full-content">{full-story}</div>
   
 
 
